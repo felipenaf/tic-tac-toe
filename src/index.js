@@ -3,34 +3,45 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
+    render() {
+        return (
+        <button
+            className="square"
+            onClick={() => this.props.onClick()}
+        >
+
+            {this.props.value}
+        </button>
+        );
+    }
+}
+
+class Board extends React.Component {
     /**
      * O super é obrigatório no construtor
      */
     constructor(props) {
         super(props);
         this.state = {
-            value: null
-        };
-
+            squares: Array(9).fill(null)
+        }
     }
 
-    render() {
-        return (
-        <button
-            className="square"
-            onClick={() => this.setState({value: 'X'})}
-        >
-
-            {this.state.value}
-        </button>
-        );
+    handleClick(i) {
+        // pra que o slice nesse contexto ?
+        // ele está fazendo a cópia do squares do state e depois jogando pra ele de novo ?
+        const squares = this.state.squares.slice();
+        squares[i] = 'X';
+        this.setState({squares: squares});
     }
 
-}
-
-class Board extends React.Component {
     renderSquare(i) {
-        return <Square />;
+        return (
+            <Square
+                value={this.state.squares[i]}
+                onClick={() => this.handleClick(i)}
+            />
+        );
     }
 
     render() {
@@ -57,7 +68,6 @@ class Board extends React.Component {
         </div>
         );
     }
-
 }
 
 class Game extends React.Component {
@@ -74,7 +84,6 @@ class Game extends React.Component {
         </div>
         );
     }
-
 }
 
 // ========================================
