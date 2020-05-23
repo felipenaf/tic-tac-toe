@@ -28,8 +28,10 @@ class Board extends React.Component {
     }
 
     handleClick(i) {
-        // pra que o slice nesse contexto ?
-        // ele está fazendo a cópia do squares do state e depois jogando pra ele de novo ?
+        /**
+         * O motivo do slice()
+         * Evitar mutação nos permite manter o histórico das versões anteriores do jogo intacta e reutiliza-las mais tarde.
+         */
         const squares = this.state.squares.slice();
         squares[i] = 'X';
         this.setState({squares: squares});
