@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from './board.js';
-import {calculateWinner} from './utils.js';
+import {calculateWinner, positionSquare} from './utils.js';
 
 class Game extends React.Component {
     /**
@@ -10,7 +10,8 @@ class Game extends React.Component {
         super(props);
         this.state = {
             history: [{
-                squares: Array(9).fill(null)
+                squares: Array(9).fill(null),
+                filledPosition: ''
             }],
             stepNumber: 0,
             xIsNext: true
@@ -35,7 +36,8 @@ class Game extends React.Component {
         this.setState({
             // concat é parecido com o push mas o cocat não altera o array original
             history: history.concat([{
-                squares: squares
+                squares: squares,
+                filledPosition: i
             }]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext
@@ -54,13 +56,12 @@ class Game extends React.Component {
         const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
         const moves = history.map((step, move) => {
-            const desc = move ?
-                `Go to move #${move}` :
-                'Go to game start';
+            const desc = move ? `Go to move #${move}` : 'Go to game start';
 
             return (
                 <li key={move}>
                     <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                    <span className="position-square">{positionSquare(step.filledPosition)}</span>
                 </li>
             )
         })

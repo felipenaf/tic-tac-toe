@@ -19,3 +19,23 @@ export function calculateWinner(squares) {
 
     return null;
 }
+
+export function positionSquare(i) {
+    if (isNaN(i)) {
+        return ''
+    }
+
+    const position = [
+        '1x1',
+        '2x1',
+        '3x1',
+        '1x2',
+        '2x2',
+        '3x2',
+        '1x3',
+        '2x3',
+        '3x3'
+    ];
+
+    return position[i];
+}
