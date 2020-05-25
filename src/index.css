@@ -32,7 +32,7 @@ ol, ul {
   width: 34px;
 }
 
-.square:focus {
+.square:focus, .square-id:focus {
   outline: none;
 }
 
@@ -51,4 +51,19 @@ ol, ul {
 
 .position-square {
   margin-left: 5px;
+}
+
+.square-id {
+  background: #fff;
+  border: 0px solid #999;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
 }
