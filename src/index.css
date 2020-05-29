@@ -67,3 +67,7 @@ ol, ul {
   text-align: center;
   width: 34px;
 }
+
+.active {
+  font-weight: bold;
+}
