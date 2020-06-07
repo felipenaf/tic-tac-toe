@@ -1,5 +1,9 @@
 # Tic-Tac-Toe
-## Desafios
+
+## Info
+Jogo da velha da documentação do React
+
+## Desafios Propostos
 
  - [x] Mostrar a localização de cada jogada no formato (col,row), para cada jogada no histórico.
  - [x] Estilizar com negrito o item da lista de jogadas que está selecionado no momento.
