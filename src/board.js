@@ -17,28 +17,28 @@ class Board extends React.Component {
      * Tanto o component Square como a div em que ele se encontra
      */
     render() {
-        const cols = Array(3).fill(null);
-        const rows = Array(3).fill(null);
+        const cols = 3;
+        const rows = 3;
         const board = [];
         let iterator = 0;
 
-        rows.map(() => {
+        for(let i = 0; i < rows; i++) {
             const itens = [];
 
-            cols.map(() => {
+            for(let j = 0; j < cols; j++) {
                 itens.push(
                     this.renderSquare(iterator)
                 );
 
                 iterator++;
-            });
+            };
 
             board.push(
                 <div key={iterator} className="board-row">
                     {itens.map((x) => x)}
                 </div>
             );
-        });
+        };
 
         return (
             <div>
