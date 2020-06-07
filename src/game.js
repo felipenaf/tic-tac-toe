@@ -15,7 +15,8 @@ class Game extends React.Component {
                 class: ''
             }],
             stepNumber: 0,
-            xIsNext: true
+            xIsNext: true,
+            order: 'Asc'
         };
     }
 
@@ -50,6 +51,14 @@ class Game extends React.Component {
             stepNumber: step,
             xIsNext: (step % 2) === 0
         });
+    }
+
+    handleChange() {
+        if (this.state.order === 'Asc') {
+            this.setState({order: 'Desc'})
+        } else {
+            this.setState({order: 'Asc'})
+        }
     }
 
     render() {
@@ -91,11 +100,32 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <ol>{moves}</ol>
+
+                    <div className="container-toggle">
+                        <label className="switch">
+                            <Checkbox onChange={() => this.handleChange()}/>
+                            <span className="slider round"></span>
+                        </label>
+                        <br /><span>Order: {this.state.order}</span>
+                    </div>
+
+                    <ol>
+                        {
+                            this.state.order === "Asc"
+                            ? moves
+                            : moves.reverse()
+                        }
+                    </ol>
                 </div>
             </div>
         );
     }
+}
+
+function Checkbox(props) {
+    return (
+        <input type="checkbox" onChange={props.onChange} />
+    );
 }
 
 export default Game;
