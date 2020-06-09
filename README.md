@@ -1,7 +1,7 @@
 # Tic-Tac-Toe
 
 ## Info
-Jogo da velha da documentação do React
+Jogo da velha da [documentação](https://pt-br.reactjs.org/tutorial/tutorial.html) do React
 
 ## Desafios Propostos
 
