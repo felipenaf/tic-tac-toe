@@ -3,9 +3,7 @@
 ![tic-tac-toe](public/img/tic-tac-toe.png)
 
 # Sobre
-<!-- Jogo da velha da [documentação](https://pt-br.reactjs.org/tutorial/tutorial.html) do React -->
-
-Jogo da velha da <a href="https://pt-br.reactjs.org/tutorial/tutorial.html" target="_blank">documentação</a> do React
+Jogo da velha da [documentação](https://pt-br.reactjs.org/tutorial/tutorial.html) do React
 
 # Iniciando
 ## Pré-requisitos
