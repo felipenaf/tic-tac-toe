@@ -1,5 +1,8 @@
 # Tic-Tac-Toe
 
+![](https://img.shields.io/badge/npm-6.14.5-orange)
+![](https://img.shields.io/badge/react-15.3.1-blue)
+
 ![tic-tac-toe](public/img/tic-tac-toe.png)
 
 # Sobre
