@@ -21,7 +21,7 @@ Jogo da velha da [documentação](https://pt-br.reactjs.org/tutorial/tutorial.ht
 
 - ### 2. Instalar o npm
 
-    `npm install npm@latest -g`
+    [Nesse link](https://www.npmjs.com/get-npm)
 
 - ### 3. Executar o projeto
 
